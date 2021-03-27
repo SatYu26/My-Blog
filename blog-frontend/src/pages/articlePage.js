@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const ArticlePage = () => (
-    <>
-    <h1>This is an article</h1>
-    </>
-);
+const ArticlePage = () => {
+  return (
+    <React.Fragment>
+      <h1>This is an article</h1>
+    </React.Fragment>
+  );
+};
 
 export default ArticlePage;
