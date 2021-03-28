@@ -5,7 +5,6 @@ By combining the front-end UI with a back-end solution and cloud hosting, we can
 
 ## Creating and Hosting a Full-Stack Site
 
-
 - Creating the app component
 - Using React-Router links
 - Setting up an Express server
