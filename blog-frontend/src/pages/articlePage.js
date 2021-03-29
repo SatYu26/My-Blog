@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import articleContent from "./article-content";
 import ArticlesList from "../components/ArticlesList";
@@ -9,6 +9,11 @@ const ArticlePage = ({ match }) => {
 
   const article = articleContent.find((article) => article.name === name);
 
+  const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
+
+  useEffect(() => {
+    setArticleInfo({ upvotes: 3 });
+  }, []);
   if (!article) return <NotFoundPage />;
 
   const otherArticles = articleContent.filter(
@@ -18,6 +23,7 @@ const ArticlePage = ({ match }) => {
   return (
     <React.Fragment>
       <h1>{article.title}</h1>
+      <p>This post has been upvoted {articleInfo.upvotes} times</p>
       {article.content.map((paragraph, key) => {
         return <p key={key}>{paragraph}</p>;
       })}
